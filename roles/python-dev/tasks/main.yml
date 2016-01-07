@@ -1,0 +1,14 @@
+---
+ - name: install python dev packages
+   dnf: name={{ item }} state=present
+   with_items:
+       - python-devel
+#  install pip from the package manager
+ - name: install pip
+   dnf: name={{ item }} state=present
+   with_items:
+       - python-pip
+       - python3-pip
+#  upgrade pip from pypi
+ - name: upgrade pip
+   pip: name=pip state=latest

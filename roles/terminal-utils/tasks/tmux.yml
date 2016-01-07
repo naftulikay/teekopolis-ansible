@@ -1,0 +1,9 @@
+---
+#  install and configure tmux and friends
+ - name: install tmux
+   dnf: name=tmux state=present
+ - name: install tmuxinator
+   dnf: name=tmuxinator state=present
+ - name: configure tmux
+   template: src={{ item }}/tmux.conf.j2 dest=/home/{{ item }}/.tmux.conf owner={{ item }} group={{ item }} mode=0600
+   with_items: users

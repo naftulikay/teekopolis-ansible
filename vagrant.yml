@@ -1,0 +1,7 @@
+---
+- hosts: all
+  pre_tasks:
+      - name: user naftuli
+        user: name=naftuli uid=1337
+  roles:
+      - { role: terminal-utils, users: [naftuli] }

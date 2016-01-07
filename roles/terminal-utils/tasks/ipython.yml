@@ -1,0 +1,20 @@
+---
+ - name: install ipython
+   pip: name=ipython state=present
+ - name: create ipython profile dirs
+   file:
+       path: /home/{{ item }}/.ipython/profile_default
+       state: directory
+       owner: "{{ item }}"
+       group: "{{ item }}"
+       mode: "0700"
+       recurse: true
+   with_items: users
+ - name: configure ipython
+   template:
+       src: "{{ item }}/ipython_config.py.j2"
+       dest: /home/{{ item }}/.ipython/profile_default/ipython_config.py
+       owner: "{{ item }}"
+       group: "{{ item }}"
+       mode: "0600"
+   with_items: users
