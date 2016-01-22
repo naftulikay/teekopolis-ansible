@@ -1,3 +1,6 @@
 ---
 dependencies:
-    - { role: python-dev }
+    - { role: ansible }
+    - { role: ipython }
+    - { role: tmux }
+    - { role: vim }

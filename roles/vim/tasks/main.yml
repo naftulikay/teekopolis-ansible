@@ -1,0 +1,10 @@
+---
+ - name: install vim
+   dnf: name=vim state=installed
+ - name: configure vim
+   template:
+       src: "{{ user }}/vimrc.conf.j2"
+       dest: /home/{{ user }}/.vimrc
+       mode: "0600"
+       owner: "{{ user }}"
+       group: "{{ user }}"

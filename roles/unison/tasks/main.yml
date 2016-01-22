@@ -1,0 +1,6 @@
+---
+ - name: install unison
+   dnf: name=unison240 state=present
+ - name: install unison-gtk
+   dnf: name=unison240-gtk state=present
+   when: is_desktop

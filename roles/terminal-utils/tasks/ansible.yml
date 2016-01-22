@@ -1,3 +1,0 @@
----
- - name: install ansible
-   pip: name=ansible state=present

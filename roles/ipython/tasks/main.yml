@@ -1,0 +1,15 @@
+---
+ - name: install ipython
+   pip: name=ipython state=present
+ - name: create ipython profile
+   command: sudo -H -u {{ user }} ipython create profile
+   args:
+       creates: /home/{{ user }}/.ipython/profile_default
+   with_items: users
+ - name: configure ipython
+   template:
+       src: "{{ user }}/ipython_config.py.j2"
+       dest: /home/{{ user }}/.ipython/profile_default/ipython_config.py
+       owner: "{{ user }}"
+       group: "{{ user }}"
+       mode: "0600"

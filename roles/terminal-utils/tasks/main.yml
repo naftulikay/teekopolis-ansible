@@ -1,7 +1,4 @@
 ---
- # hard roles
- - include: tmux.yml
- - include: ipython.yml
- # simple dependencies
+ # simple, consequence-free dependencies
  - name: install tree
    dnf: name=tree state=present
