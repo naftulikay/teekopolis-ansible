@@ -5,3 +5,4 @@
         user: name=naftuli uid=1337
   roles:
       - { role: terminal-utils, users: [naftuli] }
+      - { role: media-utils }

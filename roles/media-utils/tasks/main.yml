@@ -1,0 +1,15 @@
+---
+ - name: install ffmpeg
+   dnf: name=ffmpeg state=present
+ - name: install handbrake
+   dnf: name=handbrake state=present
+ - name: install lame
+   dnf: name=lame state=present
+ - name: install libdvdcss
+   dnf: name=libdvdcss state=present
+ - name: install makemkv
+   dnf: name=makemkv state=present
+ - name: install x264
+   dnf: name=x264 state=present
+ - name: install x265
+   dnf: name=x265 state=present

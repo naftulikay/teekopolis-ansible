@@ -8,7 +8,7 @@
    with_items: users
  - name: configure ipython
    template:
-       src: "{{ user }}/ipython_config.py.j2"
+       src: ipython_config.py.j2
        dest: /home/{{ user }}/.ipython/profile_default/ipython_config.py
        owner: "{{ user }}"
        group: "{{ user }}"

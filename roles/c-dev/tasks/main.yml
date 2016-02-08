@@ -8,3 +8,4 @@
       - gcc
       - gcc-c++
       - kernel-devel
+      - redhat-rpm-config

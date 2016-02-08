@@ -6,8 +6,8 @@ bind - split-window -v
 
 set-window-option -g mode-keys vi
 bind-key -t vi-copy 'v' begin-selection
-{% if has_desktop_environment %}
+{% if has_desktop_environment is defined %}
 bind-key -t vi-copy 'y' copy-pipe "xclip"
 {% else %}
 bind-key -t vi-copy 'y' copy-selection
-{% end %}
+{% endif %}

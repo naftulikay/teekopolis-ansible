@@ -5,4 +5,4 @@
  - name: install tmuxinator
    dnf: name=tmuxinator state=present
  - name: configure tmux
-   template: src={{ user }}/tmux.conf.j2 dest=/home/{{ user }}/.tmux.conf owner={{ user }} group={{ user }} mode=0600
+   template: src=tmux.conf.j2 dest=/home/{{ user }}/.tmux.conf owner={{ user }} group={{ user }} mode=0600

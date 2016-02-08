@@ -25,6 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # then run ansible
   config.vm.provision "ansible" do |ansible|
     ansible.playbook = "vagrant.yml"
+    ansible.raw_arguments  = "--ask-vault-pass"
     ansible.sudo = true
   end
 end

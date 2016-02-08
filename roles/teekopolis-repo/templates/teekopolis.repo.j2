@@ -1,0 +1,9 @@
+[teekopolis]
+name={{ teekopolis.repository_name }}
+baseurl={{ teekopolis.repository_url }}
+{% if teekopolis.repository_gpg %}
+gpgcheck=1
+gpgkey={{ teekopolis.repository_gpgkey }}
+{% else %}
+gpgcheck=0
+{% endif %}
